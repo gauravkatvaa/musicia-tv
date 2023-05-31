@@ -144,8 +144,7 @@ class MusicCard extends HookWidget {
   }
 
   Future<void> playAudio() async {
-    await audioPlayer.play(UrlSource(
-        _audioFile.url));
+    await audioPlayer.play(UrlSource(_audioFile.url));
   }
 
   Future<void> pauseAudio() async {
