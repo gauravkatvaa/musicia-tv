@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tv_demo">
+    package="com.gaurav.musicia">
    <application
         android:name="${applicationName}"
         android:banner="@drawable/launch_background"

@@ -82,7 +82,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height * 0.45,
       child: Row(
         children: [
@@ -134,13 +134,13 @@ class MusicList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
+    return SizedBox(
       height: size.height * 0.45,
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Musics that you may like'),
+          const Text('Musics that you may like'),
           SizedBox(
             height: size.height * 0.3,
             child: ListView.builder(

@@ -1,4 +1,4 @@
-package com.example.tv_demo
+package com.gaurav.musicia
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "998773279939",
+    "project_id": "musicia-tv",
+    "storage_bucket": "musicia-tv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998773279939:android:e0cd6445e501db67022676",
+        "android_client_info": {
+          "package_name": "com.gaurav.musicia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHYna-JbbEYwOoEFEGOQOiu8VoSrKUCzk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
