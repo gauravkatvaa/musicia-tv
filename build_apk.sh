@@ -1,6 +1,6 @@
+#!/bin/bash
 # Checking firebase cli toold are installed or not
-# Won't work in case of windows
-# Only work in Mac and Linux
+
 curl -sL https://firebase.tools | bash
 
 # You will also need to login to firebase CLI via Google Chrome
