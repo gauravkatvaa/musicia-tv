@@ -27,7 +27,7 @@ fi
 
 echo "Building $FLAVOR APK file"
 
-if flutter build apk --flavor $FLAVOR --target lib/main_$FLAVOR.dart; then
+if flutter build apk; then
     # SECRETS FROM GITHUB
     FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
     APP_ID="${{ secrets.FIREBASE_APP_ID }}"
