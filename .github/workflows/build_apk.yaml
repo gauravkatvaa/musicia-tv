@@ -1,0 +1,30 @@
+name: Build APK and Release to Firebase
+
+# on:
+#   push:
+#     branches:
+#       - develop
+
+on: [ pull_request ]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: 🐦 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.10.0
+          channel: stable
+          cache: true
+
+
+      - name: Build and release script
+        run: |
+           bash build_apk.sh
