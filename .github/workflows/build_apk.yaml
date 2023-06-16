@@ -27,6 +27,7 @@ jobs:
 
       - name: Build and release script
         run: |
+          curl -sL https://firebase.tools | bash
           if flutter build apk; then
               # SECRETS FROM GITHUB
               FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
