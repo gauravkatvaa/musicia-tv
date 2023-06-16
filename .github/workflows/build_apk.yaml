@@ -27,4 +27,4 @@ jobs:
 
       - name: Build and release script
         run: |
-           bash build_apk.sh
+            echo "${{ secrets.FIREBASE_TOKEN }}"
