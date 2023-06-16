@@ -36,7 +36,7 @@ if flutter build apk; then
 
     echo "Distributing the $FLAVOR APK File to firebase"
 
-    firebase appdistribution:distribute build/app/outputs/flutter-apk/app-$FLAVOR-release.apk --app APP_ID --groups "qa-test" --token FIREBASE_TOKEN
+    firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app APP_ID --groups "qa" --token FIREBASE_TOKEN
 
 else
     echo "Build Failed"
