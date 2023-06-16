@@ -27,7 +27,7 @@ fi
 
 echo "Building $FLAVOR APK file"
 
-echo "${{ secrets.FIREBASE_TOKEN }}"
+echo "${ secrets.FIREBASE_TOKEN }"
 # APP_ID="${{ secrets.FIREBASE_APP_ID }}"
 
 
