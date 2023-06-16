@@ -28,21 +28,21 @@ fi
 echo "Building $FLAVOR APK file"
 
 echo "${ secrets.FIREBASE_TOKEN }"
-# APP_ID="${{ secrets.FIREBASE_APP_ID }}"
+APP_ID="${{ secrets.FIREBASE_APP_ID }}"
 
 
-# if flutter build apk; then
-#     # SECRETS FROM GITHUB
-#     FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
-#     APP_ID="${{ secrets.FIREBASE_APP_ID }}"
+if flutter build apk; then
+    # SECRETS FROM GITHUB
+    FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
+    APP_ID="${{ secrets.FIREBASE_APP_ID }}"
 
-#     echo "Build Success"
+    echo "Build Success"
 
-#     echo "Distributing the $FLAVOR APK File to firebase"
+    echo "Distributing the $FLAVOR APK File to firebase"
 
-#     firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app APP_ID --groups "qa" --token FIREBASE_TOKEN
+    firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app APP_ID --groups "qa" --token FIREBASE_TOKEN
 
-# else
-#     echo "Build Failed"
+else
+    echo "Build Failed"
 
-# fi
+fi

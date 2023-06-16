@@ -27,5 +27,19 @@ jobs:
 
       - name: Build and release script
         run: |
-          TOKEN="${{ secrets.FIREBASE_TOKEN }}"
-          echo $TOKEN
+          if flutter build apk; then
+              # SECRETS FROM GITHUB
+              FIREBASE_TOKEN="${{ secrets.FIREBASE_TOKEN }}"
+              APP_ID="${{ secrets.FIREBASE_APP_ID }}"
+
+              echo "Build Success"
+
+              echo "Distributing the $FLAVOR APK File to firebase"
+
+              firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app APP_ID --groups "qa" --token FIREBASE_TOKEN
+
+          else
+              echo "Build Failed"
+
+          fi
+          
