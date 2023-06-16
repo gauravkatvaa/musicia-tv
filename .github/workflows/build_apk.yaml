@@ -27,4 +27,5 @@ jobs:
 
       - name: Build and release script
         run: |
-            echo "${{ secrets.FIREBASE_TOKEN }}"
+          TOKEN="${{ secrets.FIREBASE_TOKEN }}"
+          echo TOKEN
