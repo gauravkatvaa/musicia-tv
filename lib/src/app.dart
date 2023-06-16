@@ -33,8 +33,9 @@ class HomePage extends StatelessWidget {
     final audioFile = AudioFile(
       title: 'Mere dil mei aaj kya hai tu kahe to me bata du',
       thumbnailUrl:
-          'https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU',
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+          'https://www.freepnglogos.com/uploads/cat-png/cat-boarding-24.png',
+      url:
+          'https://firebasestorage.googleapis.com/v0/b/musicia-tv.appspot.com/o/Dance-Ka-Bhoot-MassTamilan.dev.mp3',
     );
 
     return Scaffold(
@@ -91,7 +92,7 @@ class _MusicPlayerState extends State<MusicPlayer> {
             borderRadius: BorderRadius.circular(15),
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.red,
+                color: Colors.pink.withOpacity(0.2),
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
                   image: NetworkImage(widget.audioFile.thumbnailUrl),
@@ -141,8 +142,9 @@ class MusicList extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text('Musics that you may like'),
+          const SizedBox(height: 10),
           SizedBox(
-            height: size.height * 0.3,
+            height: size.height * 0.35,
             child: ListView.builder(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
@@ -165,12 +167,28 @@ class MusicCard extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: SizedBox(
-        width: 200,
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.green.withOpacity(0.2),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      margin: const EdgeInsets.only(right: 10),
+      width: 200,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(10),
+        onTap: () {},
         child: ListTile(
-          title: Text(title),
+          title: Column(
+            children: [
+              Image.network(
+                'https://www.india.com/wp-content/uploads/2022/07/Collage-Maker-13-Jul-2022-12.13-PM.jpg',
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Text(title),
+            ],
+          ),
         ),
       ),
     );
