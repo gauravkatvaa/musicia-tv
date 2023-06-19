@@ -8,10 +8,7 @@ jobs:
 
     steps:
       - name: Set Secrets in bash env
-        env:
-          APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-
+        
       - name: Checkout code
         uses: actions/checkout@v2
         with:
