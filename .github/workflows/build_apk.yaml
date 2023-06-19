@@ -6,9 +6,7 @@ jobs:
   build-and-run:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Set Secrets in bash env
-        
+    steps:  
       - name: Checkout code
         uses: actions/checkout@v2
         with:
