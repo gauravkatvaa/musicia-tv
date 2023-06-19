@@ -1,12 +1,12 @@
 name: Build APK and Release to Firebase
 
-on: [ pull_request, push ]
+on: [ pull_request ]
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
 
-    steps:
+    steps:  
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -19,24 +19,23 @@ jobs:
           channel: stable
           cache: true
 
-
       - name: Build and release script
-        with:
-          # APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-          # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: |
-          curl -sL https://firebase.tools | bash
+          env:
+            APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          run: |
+            curl -sL https://firebase.tools | bash
 
-          if flutter build apk; then
+            if flutter build apk; then
 
-              echo "Build Success"
+                echo "Build Success"
 
-              echo "Distributing the $FLAVOR APK File to firebase"
+                echo "Distributing the $FLAVOR APK File to firebase"
 
-              firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app "$APP_ID" --groups "qa" --token "$FIREBASE_TOKEN"
+                firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app "$APP_ID" --groups "qa" --token "$FIREBASE_TOKEN"
 
-          else
-              echo "Build Failed"
+            else
+                echo "Build Failed"
 
-          fi
+            fi
           
