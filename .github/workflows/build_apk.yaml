@@ -20,6 +20,9 @@ jobs:
           cache: true
 
       - name: Build and release script
+          env:
+            APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           run: |
           curl -sL https://firebase.tools | bash
 
@@ -36,7 +39,4 @@ jobs:
               echo "Build Failed"
 
           fi
-          env:
-            APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-            FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
           
