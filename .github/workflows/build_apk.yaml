@@ -31,7 +31,6 @@ jobs:
 
                 echo "Build Success"
 
-
                 echo "Distributing the $FLAVOR APK File to firebase"
 
                 firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app "$APP_ID" --groups "qa" --token "$FIREBASE_TOKEN"
