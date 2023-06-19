@@ -23,7 +23,6 @@ jobs:
           env:
             APP_ID: ${{ secrets.FIREBASE_APP_ID }}
             FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          secrets: inherit
           run: |
             curl -sL https://firebase.tools | bash
 
