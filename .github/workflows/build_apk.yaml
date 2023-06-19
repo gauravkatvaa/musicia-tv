@@ -7,6 +7,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - shell: bash
+        env:
+          APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
       - name: Checkout code
         uses: actions/checkout@v2
         with:
@@ -19,11 +24,6 @@ jobs:
           channel: stable
           cache: true
 
-      - shell: bash
-        env:
-          APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-          
       - name: Build and release script
           run: |
           curl -sL https://firebase.tools | bash
