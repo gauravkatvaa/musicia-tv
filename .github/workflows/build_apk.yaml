@@ -21,7 +21,7 @@ jobs:
 
 
       - name: Build and release script
-        with:
+        # with:
           # APP_ID: ${{ secrets.FIREBASE_APP_ID }}
           # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
@@ -30,7 +30,7 @@ jobs:
           if flutter build apk; then
 
               echo "Build Success"
-              
+
 
               echo "Distributing the $FLAVOR APK File to firebase"
 
