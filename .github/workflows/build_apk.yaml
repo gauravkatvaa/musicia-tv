@@ -1,10 +1,5 @@
 name: Build APK and Release to Firebase
 
-# on:
-#   push:
-#     branches:
-#       - develop
-
 on: [ pull_request, push ]
 
 jobs:
@@ -27,11 +22,11 @@ jobs:
 
       - name: Build and release script
         with:
-          APP_ID: ${{ secrets.FIREBASE_APP_ID }}
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          # APP_ID: ${{ secrets.FIREBASE_APP_ID }}
+          # FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
           curl -sL https://firebase.tools | bash
-          
+
           if flutter build apk; then
 
               echo "Build Success"
